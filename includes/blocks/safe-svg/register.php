@@ -92,7 +92,16 @@ function render_block_callback( $attributes ) {
 		)
 	);
 
-	$inside_style = render_inline_css( $inside_style );
+	/**
+	 * The inside style.
+	 * 
+	 * Allows a user to adjust the inline svg inside style attribute.
+	 * 
+	 * @param string The style attribute.
+	 * 
+	 * @since 2.5.6
+	 */	
+	$inside_style = apply_filters( 'safe_svg_inside_inline_style', render_inline_css( $inside_style ) );
 
 	/**
 	 * The wrapper markup.
