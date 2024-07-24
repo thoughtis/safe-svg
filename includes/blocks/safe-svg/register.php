@@ -57,6 +57,17 @@ function render_block_callback( $attributes ) {
 	}
 
 	/**
+	 * The cover style.
+	 * 
+	 * Allows a user to adjust the inline svg cover style attribute .
+	 * 
+	 * @param string The style attribute.
+	 * 
+	 * @since 2.5.6
+	 */	
+	$cover_style = apply_filters( 'safe_svg_cover_inline_style', isset( $attributes['alignment'] ) ? 'text-align: ' . $attributes['alignment'] : 'text-align: left');
+	
+	/**
 	 * The wrapper markup.
 	 *
 	 * Allows a user to adjust the inline svg wrapper markup.
@@ -71,10 +82,10 @@ function render_block_callback( $attributes ) {
 	return apply_filters(
 		'safe_svg_inline_markup',
 		sprintf(
-			'<div class="wp-block-safe-svg-svg-icon safe-svg-cover" style="text-align: %s;">
+			'<div class="wp-block-safe-svg-svg-icon safe-svg-cover"%s>
 				<div class="safe-svg-inside%s" style="width: %spx; height: %spx; background-color: var(--wp--preset--color--%s); color: var(--wp--preset--color--%s); padding-top: %s; padding-right: %s; padding-bottom: %s; padding-left: %s; margin-top: %s; margin-right: %s; margin-bottom: %s; margin-left: %s;">%s</div>
 			</div>',
-			isset( $attributes['alignment'] ) ? esc_attr( $attributes['alignment'] ) : 'left',
+			empty( $cover_style ) ? '' : ' style="' . esc_attr( $cover_style ) . '"',
 			empty( $class_name ) ? '' : ' ' . esc_attr( $class_name ),
 			isset( $attributes['dimensionWidth'] ) ? esc_attr( $attributes['dimensionWidth'] ) : '',
 			isset( $attributes['dimensionHeight'] ) ? esc_attr( $attributes['dimensionHeight'] ) : '',
