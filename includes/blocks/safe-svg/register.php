@@ -52,6 +52,10 @@ function render_block_callback( $attributes ) {
 	 */
 	$class_name = apply_filters( 'safe_svg_inline_class', 'safe-svg-inline' );
 
+	if ( isset( $attributes['className'] ) ) {
+		$class_name = $class_name . ' ' . $attributes['className'];
+	}
+
 	/**
 	 * The wrapper markup.
 	 *
@@ -68,11 +72,10 @@ function render_block_callback( $attributes ) {
 		'safe_svg_inline_markup',
 		sprintf(
 			'<div class="wp-block-safe-svg-svg-icon safe-svg-cover" style="text-align: %s;">
-				<div class="safe-svg-inside %s%s" style="width: %spx; height: %spx; background-color: var(--wp--preset--color--%s); color: var(--wp--preset--color--%s); padding-top: %s; padding-right: %s; padding-bottom: %s; padding-left: %s; margin-top: %s; margin-right: %s; margin-bottom: %s; margin-left: %s;">%s</div>
+				<div class="safe-svg-inside%s" style="width: %spx; height: %spx; background-color: var(--wp--preset--color--%s); color: var(--wp--preset--color--%s); padding-top: %s; padding-right: %s; padding-bottom: %s; padding-left: %s; margin-top: %s; margin-right: %s; margin-bottom: %s; margin-left: %s;">%s</div>
 			</div>',
 			isset( $attributes['alignment'] ) ? esc_attr( $attributes['alignment'] ) : 'left',
-			esc_attr( $class_name ),
-			isset( $attributes['className'] ) ? ' ' . esc_attr( $attributes['className'] ) : '',
+			empty( $class_name ) ? '' : ' ' . esc_attr( $class_name ),
 			isset( $attributes['dimensionWidth'] ) ? esc_attr( $attributes['dimensionWidth'] ) : '',
 			isset( $attributes['dimensionHeight'] ) ? esc_attr( $attributes['dimensionHeight'] ) : '',
 			isset( $attributes['backgroundColor'] ) ? esc_attr( $attributes['backgroundColor'] ) : '',
