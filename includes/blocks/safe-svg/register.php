@@ -70,11 +70,17 @@ function render_block_callback( $attributes ) {
 	$inside_style = array();
 
 	if ( isset( $attributes['style']['spacing']['padding'] ) ) {
-		$inside_style = add_css_property_prefix( $attributes['style']['spacing']['padding'], 'padding' );
+		$inside_style = array_merge(
+			$inside_style,
+			add_css_property_prefix( $attributes['style']['spacing']['padding'], 'padding' )
+		);
 	}
 	
 	if ( isset( $attributes['style']['spacing']['margin'] ) ) {
-		$inside_style = add_css_property_prefix( $attributes['style']['spacing']['margin'], 'margin' );
+		$inside_style = array_merge (
+			$inside_style,
+			add_css_property_prefix( $attributes['style']['spacing']['margin'], 'margin' )
+		);
 	}
 
 	$inside_style = array_map(
