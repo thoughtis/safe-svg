@@ -65,17 +65,6 @@ function render_block_callback( $attributes ) {
 	if ( isset( $attributes['className'] ) ) {
 		$class_name = $class_name . ' ' . $attributes['className'];
 	}
-
-	/**
-	 * The cover style.
-	 * 
-	 * Allows a user to adjust the inline svg cover style attribute .
-	 * 
-	 * @param string The style attribute.
-	 * 
-	 * @since 2.5.6
-	 */	
-	$cover_style = apply_filters( 'safe_svg_cover_inline_style', isset( $attributes['alignment'] ) ? 'text-align: ' . $attributes['alignment'] : 'text-align: left');
 	
 	$inside_style = array();
 
@@ -132,10 +121,10 @@ function render_block_callback( $attributes ) {
 	return apply_filters(
 		'safe_svg_inline_markup',
 		sprintf(
-			'<div class="wp-block-safe-svg-svg-icon safe-svg-cover"%s>
+			'<div class="wp-block-safe-svg-svg-icon safe-svg-cover%s">
 				<div class="safe-svg-inside%s"%s>%s</div>
 			</div>',
-			empty( $cover_style ) ? '' : ' style="' . esc_attr( $cover_style ) . '"',
+			isset( $attributes['align'] ) ? ' align' . $attributes['align'] : '',
 			empty( $class_name ) ? '' : ' ' . esc_attr( $class_name ),
 			empty( $inside_style ) ? '' : ' style="' . esc_attr( $inside_style ) . '"',
 			$contents

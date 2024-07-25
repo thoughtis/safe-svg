@@ -1,15 +1,33 @@
-.safe-svg-cover {
-    text-align: center;
+.wp-block-safe-svg-svg-icon	{
+	svg {
+		display: block;
+		height: auto;
+		max-block-size: 100%;
+		max-inline-size: 100%;
+	}
 
-    .safe-svg-inside {
-        display: inline-block;
-        max-width: 100%;
-    }
+	&.alignfull,
+	&.alignwide {
+		svg {
+			width: 100%;
+		}
+	}
 
-    svg {
-        height: 100%;
-        max-height: 100%;
-        max-width: 100%;
-        width: 100%;
-    }
+	&.aligncenter,
+	&.alignleft,
+	&.alignright {
+		display: table;
+	}
+
+	&.aligncenter {
+		text-align: center;
+	}
+
+	&.alignleft {
+		text-align: left;
+	}
+
+	&.alignright {
+		text-align: right;
+	}
 }

@@ -18,6 +18,7 @@ import {
 } from '@wordpress/block-editor';
 import PropTypes from 'prop-types';
 import { ReactSVG } from 'react-svg'
+import './editor.scss';
 
 /**
  * Edit component.
@@ -64,10 +65,6 @@ const SafeSvgBlockEdit = ( props ) => {
 	const newClassName = className.replace(/has-[\w-]*-color|has-background/g, '').trim();
 	containerBlockProps.className = newClassName;
 
-	// Add the width and height to enforce dimensions and to keep parity with the frontend.
-	style.width = `${dimensionWidth}px`;
-	style.height = `${dimensionHeight}px`;
-
 	const ALLOWED_MEDIA_TYPES = [ 'image/svg+xml' ];
 
 	const onSelectImage = media => {
@@ -102,9 +99,11 @@ const SafeSvgBlockEdit = ( props ) => {
 	}
 
 	const onChange = (dimensionSizes) => {
-		if( !dimensionSizes.width && !dimensionSizes.height ) {
-			dimensionSizes.width = parseInt( imageSizes[type].width );
-			dimensionSizes.height = parseInt( imageSizes[type].height );
+		if( null === dimensionSizes.width ) {
+			dimensionSizes.width = 0;
+		}
+		if( null === dimensionSizes.height ) {
+			dimensionSizes.height = 0;
 		}
 		setAttributes({
 			dimensionWidth: dimensionSizes.width ?? dimensionWidth,
@@ -163,9 +162,6 @@ const SafeSvgBlockEdit = ( props ) => {
 							onChangeImage={onChangeImage} />
 					</PanelBody>
 				</InspectorControls><BlockControls>
-						<AlignmentToolbar
-							value={alignment}
-							onChange={(newVal) => setAttributes({ alignment: newVal })} />
 					</BlockControls><BlockControls>
 						<MediaReplaceFlow
 							mediaId={imageID}
@@ -198,7 +194,8 @@ const SafeSvgBlockEdit = ( props ) => {
 						className="safe-svg-inside"
 					>
 						<ReactSVG src={svgURL} beforeInjection={(svg) => {
-							svg.setAttribute( 'style', `width: ${dimensionWidth}px; height: ${dimensionHeight}px;` );
+							svg.setAttribute( 'width', `${dimensionWidth}px` );
+							svg.setAttribute( 'height', `${dimensionHeight}` );
 						}} />
 					</div>
 				</div>
