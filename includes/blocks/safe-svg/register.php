@@ -7,6 +7,8 @@
 
 namespace SafeSvg\Blocks\SafeSvgBlock;
 
+use WP_HTML_Tag_Processor;
+
 /**
  * Register the block
  */
@@ -39,6 +41,14 @@ function render_block_callback( $attributes ) {
 	// If we couldn't get the contents of the file, empty string again.
 	if ( ! $contents = file_get_contents( get_attached_file( $attributes['imageID'] ) ) ) { // phpcs:ignore
 		return '';
+	}
+
+	$contents = new WP_HTML_Tag_Processor( $contents );
+		
+	if ( $contents->next_tag( 'svg' ) ) {
+		$contents->set_attribute( 'width', isset( $attributes['dimensionWidth'] ) ? esc_attr( $attributes['dimensionWidth'] . 'px' ) : 'auto' );
+		$contents->set_attribute( 'height', isset( $attributes['dimensionHeight'] ) ? esc_attr( $attributes['dimensionHeight'] . 'px' ) : 'auto' );
+		$contents->get_updated_html();
 	}
 
 	/**
@@ -91,8 +101,6 @@ function render_block_callback( $attributes ) {
 	$inside_style = array_merge(
 		$inside_style,
 		array(
-			'width'            => isset( $attributes['dimensionWidth'] ) ? esc_attr( $attributes['dimensionWidth'] . 'px' ) : '',
-			'height'           => isset( $attributes['dimensionHeight'] ) ? esc_attr( $attributes['dimensionHeight'] . 'px' ) : '',
 			'background-color' => ( isset( $attributes['backgroundColor'] ) ? esc_attr( 'var(--wp--preset--color--' . $attributes['backgroundColor'] . ')' ) : '' ) ?: ( isset( $attributes['style']['color']['background'] ) ? esc_attr( $attributes['style']['color']['background'] ) : '' ),
 			'color'            => ( isset( $attributes['textColor'] ) ? esc_attr( 'var(--wp--preset--color--' . $attributes['textColor'] . ')' ) : '' ) ?: ( isset( $attributes['style']['color']['text'] ) ? esc_attr( $attributes['style']['color']['text'] ) : '' ),
 		)
