@@ -193,7 +193,7 @@ const SafeSvgBlockEdit = ( props ) => {
 						className="safe-svg-inside"
 					>
 						<ReactSVG src={svgURL} beforeInjection={(svg) => {
-							svg.setAttribute( 'width', `${dimensionWidth}px` );
+							svg.setAttribute( 'width', `${dimensionWidth}` );
 							svg.setAttribute( 'height', `${dimensionHeight}` );
 						}} />
 					</div>
