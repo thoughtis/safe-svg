@@ -48,6 +48,5 @@
     }
   },
   "editorScript": "file:../../../dist/safe-svg-block.js",
-  "editorStyle": "file:../../../dist/safe-svg-block-index.css",
   "style": "file:../../../dist/safe-svg-block-frontend.css"
 }

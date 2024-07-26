@@ -18,7 +18,6 @@ import {
 } from '@wordpress/block-editor';
 import PropTypes from 'prop-types';
 import { ReactSVG } from 'react-svg'
-import './editor.scss';
 
 /**
  * Edit component.
