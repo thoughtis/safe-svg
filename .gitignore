@@ -1,12 +1,10 @@
 # Directories
-vendor
 .DS_Store
 node_modules
 tests/cypress/downloads
 tests/cypress/screenshots
 tests/cypress/videos
 tests/cypress/reports
-dist
 
 # Files
 safe-svg.zip
