@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
+## [2.2.6] - 2024-07-29
+### Added
+- Alignment settings to make Inline SVG block settings similar to the core image block (props [@jessica-townsend](https://github.com/jessica-townsend), [@douglas-johnson](https://github.com/douglas-johnson)).
+
+### Fixed
+- Only apply inline CSS if properties are not empty (props [@jessica-townsend](https://github.com/jessica-townsend), [@douglas-johnson](https://github.com/douglas-johnson)).
+- Moved width and height to be output on the SVG element instead of the wrapper (props [@jessica-townsend](https://github.com/jessica-townsend), [@douglas-johnson](https://github.com/douglas-johnson)).
+
+### Removed 
+- Text align setting, redundant when using alignment settings (props [@jessica-townsend](https://github.com/jessica-townsend), [@douglas-johnson](https://github.com/douglas-johnson)).
+
 ## [2.2.5] - 2024-06-27
 ### Added
 - New filter, `safe_svg_current_user_can_upload`, allowing more control over who can upload SVG files (props [@dkotter](https://github.com/dkotter), [@iamdharmesh](https://github.com/iamdharmesh) via [#193](https://github.com/10up/safe-svg/pull/193)).

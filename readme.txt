@@ -2,7 +2,7 @@
 Contributors:      10up, enshrined, jeffpaul
 Tags:              svg, security, media, vector, mime
 Tested up to:      6.6
-Stable tag:        2.2.5
+Stable tag:        2.2.6
 License:           GPL-2.0-or-later
 License URI:       https://spdx.org/licenses/GPL-2.0-or-later.html
 
@@ -62,7 +62,11 @@ They take one argument that must be returned. See below for examples:
         return $tags;
     } );
 
-== Changelog ==
+= 2.2.6 - 2024-07-29 =
+* **Added:** Alignment settings to make Inline SVG block settings similar to the core image block (props [@jessica-townsend](https://github.com/jessica-townsend), [@douglas-johnson](https://github.com/douglas-johnson)).
+* **Fixed:** Only apply inline CSS if properties are not empty (props [@jessica-townsend](https://github.com/jessica-townsend), [@douglas-johnson](https://github.com/douglas-johnson)).
+* **Fixed:** Moved width and height to be output on the SVG element instead of the wrapper (props [@jessica-townsend](https://github.com/jessica-townsend), [@douglas-johnson](https://github.com/douglas-johnson)).
+* **Removed:** Text align setting, redundant when using alignment settings (props [@jessica-townsend](https://github.com/jessica-townsend), [@douglas-johnson](https://github.com/douglas-johnson)).
 
 = 2.2.5 - 2024-06-27 =
 * **Added:** New filter, `safe_svg_current_user_can_upload`, allowing more control over who can upload SVG files (props [@dkotter](https://github.com/dkotter), [@iamdharmesh](https://github.com/iamdharmesh) via [#193](https://github.com/10up/safe-svg/pull/193)).
