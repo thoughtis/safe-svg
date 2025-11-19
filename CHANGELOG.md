@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
+## [2.4.1] - 2025-11-19
+### Changed
+- Merge upstream changes with fork (props [@jessica-townsend](https://github.com/jessica-townsend), [@douglas-johnson](https://github.com/douglas-johnson)).
+
+
 ## [2.4.0] - 2025-09-22
 ### Added
 - Ability to upload SVGs from more admin locations (props [@stormrockwell](https://github.com/stormrockwell), [@darylldoyle](https://github.com/darylldoyle), [@wpexplorer](https://github.com/wpexplorer), [@smerriman](https://github.com/smerriman), [@jeffpaul](https://github.com/jeffpaul), [@dkotter](https://github.com/dkotter) via [#279](https://github.com/10up/safe-svg/pull/279)).

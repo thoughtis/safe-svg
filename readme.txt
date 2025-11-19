@@ -2,7 +2,7 @@
 Contributors:      10up, enshrined, jeffpaul
 Tags:              svg, security, media, vector, mime
 Tested up to:      6.8
-Stable tag:        2.4.0
+Stable tag:        2.4.1
 License:           GPL-2.0-or-later
 License URI:       https://spdx.org/licenses/GPL-2.0-or-later.html
 
@@ -61,6 +61,9 @@ They take one argument that must be returned. See below for examples:
 
         return $tags;
     } );
+
+= 2.4.1 - 2025-11-19 =
+* **Changed:** Merge upstream changes with fork (props [@jessica-townsend](https://github.com/jessica-townsend), [@douglas-johnson](https://github.com/douglas-johnson)).
 
 = 2.4.0 - 2025-09-22 =
 * **Added:** Ability to upload SVGs from more admin locations (props [@stormrockwell](https://github.com/stormrockwell), [@darylldoyle](https://github.com/darylldoyle), [@wpexplorer](https://github.com/wpexplorer), [@smerriman](https://github.com/smerriman), [@jeffpaul](https://github.com/jeffpaul), [@dkotter](https://github.com/dkotter) via [#279](https://github.com/10up/safe-svg/pull/279)).
