@@ -1,16 +1,10 @@
 # Safe SVG
 
-> Enable SVG uploads and sanitize them to stop XML/SVG vulnerabilities in your WordPress website.
+![Safe SVG](https://github.com/10up/safe-svg/blob/develop/.wordpress-org/banner-1544x500.png)
 
-[![Support Level](https://img.shields.io/badge/support-stable-blue.svg)](#support-level)
-[![Release Version](https://img.shields.io/github/release/10up/safe-svg.svg)](https://github.com/10up/safe-svg/releases/latest)
-![WordPress tested up to version](https://img.shields.io/wordpress/plugin/tested/safe-svg?label=WordPress)
-[![GPL-2.0-or-later License](https://img.shields.io/github/license/10up/safe-svg.svg)](https://github.com/10up/safe-svg/blob/develop/LICENSE.md)
-[![Dependency Review](https://github.com/10up/safe-svg/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/10up/safe-svg/actions/workflows/dependency-review.yml)
-[![E2E test](https://github.com/10up/safe-svg/actions/workflows/cypress.yml/badge.svg)](https://github.com/10up/safe-svg/actions/workflows/cypress.yml)
-[![PHP Compatibility](https://github.com/10up/safe-svg/actions/workflows/php-compatibility.yml/badge.svg)](https://github.com/10up/safe-svg/actions/workflows/php-compatibility.yml)
-[![PHPCS](https://github.com/10up/safe-svg/actions/workflows/phpcs.yml/badge.svg)](https://github.com/10up/safe-svg/actions/workflows/phpcs.yml)
-[![PHPUnit](https://github.com/10up/safe-svg/actions/workflows/phpunit.yml/badge.svg)](https://github.com/10up/safe-svg/actions/workflows/phpunit.yml)
+[![Support Level](https://img.shields.io/badge/support-stable-blue.svg)](#support-level) ![Required PHP Version](https://img.shields.io/wordpress/plugin/required-php/safe-svg?label=Requires%20PHP) ![Required WP Version](https://img.shields.io/wordpress/plugin/wp-version/safe-svg?label=Requires%20WordPress) ![WordPress tested up to version](https://img.shields.io/wordpress/plugin/tested/safe-svg?label=WordPress) [![GPL-2.0-or-later License](https://img.shields.io/github/license/10up/safe-svg.svg)](https://github.com/10up/safe-svg/blob/develop/LICENSE.md) [![Dependency Review](https://github.com/10up/safe-svg/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/10up/safe-svg/actions/workflows/dependency-review.yml) [![E2E test](https://github.com/10up/safe-svg/actions/workflows/cypress.yml/badge.svg)](https://github.com/10up/safe-svg/actions/workflows/cypress.yml) [![PHP Compatibility](https://github.com/10up/safe-svg/actions/workflows/php-compatibility.yml/badge.svg)](https://github.com/10up/safe-svg/actions/workflows/php-compatibility.yml) [![PHPCS](https://github.com/10up/safe-svg/actions/workflows/phpcs.yml/badge.svg)](https://github.com/10up/safe-svg/actions/workflows/phpcs.yml) [![PHPUnit](https://github.com/10up/safe-svg/actions/workflows/phpunit.yml/badge.svg)](https://github.com/10up/safe-svg/actions/workflows/phpunit.yml) [![CodeQL](https://github.com/10up/safe-svg/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/10up/safe-svg/actions/workflows/github-code-scanning/codeql) [![WordPress Playground Demo](https://img.shields.io/wordpress/plugin/v/safe-svg?logo=wordpress&logoColor=FFFFFF&label=Playground%20Demo&labelColor=3858E9&color=3858E9)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/10up/safe-svg/update/badges/.wordpress-org/blueprints/blueprint.json)
+
+> Enable SVG uploads and sanitize them to stop XML/SVG vulnerabilities in your WordPress website.
 
 ## Overview
 
@@ -34,7 +28,7 @@ SVG Optimization is done through the following library: [https://github.com/svg/
 ## Requirements
 
 * PHP 7.4+
-* [WordPress](http://wordpress.org/) 6.4+
+* [WordPress](http://wordpress.org/) 6.6+
 
 ## Installation
 
@@ -90,4 +84,4 @@ and [CREDITS.md](CREDITS.md) for a listing of maintainers of, contributors to, a
 
 ## Like what you see?
 
-<a href="http://10up.com/contact/"><img src="https://10up.com/uploads/2016/10/10up-Github-Banner.png" width="850" alt="Work with us at 10up"></a>
+<a href="http://10up.com/contact/"><img src="https://github.com/10up/.github/blob/trunk/profile/10up-github-banner.jpg" width="850" alt="Work with the 10up WordPress Practice at Fueled"></a>

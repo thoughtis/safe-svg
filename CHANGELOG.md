@@ -4,7 +4,98 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
-## [2.2.6] - 2024-07-29
+## [2.4.1] - 2025-11-19
+### Changed
+- Merge upstream changes with fork (props [@jessica-townsend](https://github.com/jessica-townsend), [@douglas-johnson](https://github.com/douglas-johnson)).
+
+
+## [2.4.0] - 2025-09-22
+### Added
+- Ability to upload SVGs from more admin locations (props [@stormrockwell](https://github.com/stormrockwell), [@darylldoyle](https://github.com/darylldoyle), [@wpexplorer](https://github.com/wpexplorer), [@smerriman](https://github.com/smerriman), [@jeffpaul](https://github.com/jeffpaul), [@dkotter](https://github.com/dkotter) via [#279](https://github.com/10up/safe-svg/pull/279)).
+
+### Changed
+- Added `$attachment_id` argument to filters `safe_svg_use_width_height_attributes` and `safe_svg_dimensions` (props [@roborourke](https://github.com/roborourke), [@dkotter](https://github.com/dkotter) via [#278](https://github.com/10up/safe-svg/pull/278)).
+
+### Fixed
+- Inconsistent or incorrect data type for `$svg` argument in the filters `safe_svg_use_width_height_attributes` and `safe_svg_dimensions` (props [@roborourke](https://github.com/roborourke), [@dkotter](https://github.com/dkotter) via [#278](https://github.com/10up/safe-svg/pull/278)).
+
+## [2.3.3] - 2025-08-13
+### Security
+- Update the `enshrined/svg-sanitize` package from `0.19.0` to `0.22.0` to fix an issue with case-insensitive attributes slipping through the sanitiser and address PHP 8.4 deprecation warnings (props [@darylldoyle](https://github.com/darylldoyle), [@sudar](https://github.com/sudar), [@georgestephanis](https://github.com/georgestephanis), [@dkotter](https://github.com/dkotter), [@realazizk](https://github.com/realazizk) via [#268](https://github.com/10up/safe-svg/pull/268), [#272](https://github.com/10up/safe-svg/pull/272)).
+- Bump `form-data` from 4.0.0 to 4.0.4 (props [@dependabot](https://github.com/apps/dependabot), [@faisal-alvi](https://github.com/faisal-alvi) via [#270](https://github.com/10up/safe-svg/pull/270)).
+- Bump `tmp` from 0.2.3 to 0.2.5 and `@inquirer/editor` from 4.2.9 to 4.2.16 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#271](https://github.com/10up/safe-svg/pull/271)).
+
+### Developer
+- Configure dependabot to automatically create PR for `enshrined/svg-sanitize` (props [@sudar](https://github.com/sudar), [@georgestephanis](https://github.com/georgestephanis), [@dkotter](https://github.com/dkotter), [@jeffpaul](https://github.com/jeffpaul) via [#269](https://github.com/10up/safe-svg/pull/269)).
+- Fix typo in `dependency-review.yml` (props [@szepeviktor](https://github.com/szepeviktor), [@jeffpaul](https://github.com/jeffpaul) via [#276](https://github.com/10up/safe-svg/pull/276)).
+
+## [2.3.2] - 2025-07-21
+**Note that this release bumps the WordPress minimum version from 6.5 to 6.6.**
+
+### Fixed
+- Visual parity between the front end and the block editor (props [@s3rgiosan](https://github.com/s3rgiosan), [@dkotter](https://github.com/dkotter) via [#261](https://github.com/10up/safe-svg/pull/261), [#266](https://github.com/10up/safe-svg/pull/266)).
+
+### Changed
+- Bump WordPress "tested up to" version 6.8 (props [@godleman](https://github.com/godleman), [@jeffpaul](https://github.com/jeffpaul), [@dkotter](https://github.com/dkotter) via [#251](https://github.com/10up/safe-svg/pull/251), [#254](https://github.com/10up/safe-svg/pull/254)).
+- Bump WordPress minimum supported version to 6.6 (props [@godleman](https://github.com/godleman), [@jeffpaul](https://github.com/jeffpaul), [@dkotter](https://github.com/dkotter) via [#254](https://github.com/10up/safe-svg/pull/254)).
+
+### Security
+- Bump `ws` from 7.5.10 to 8.18.0, `@wordpress/scripts` from 27.9.0 to 30.6.0, `nanoid` from 3.3.7 to 3.3.8 and `mocha` from 10.2.0 to 11.0.1 (props [@dependabot](https://github.com/apps/dependabot), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#245](https://github.com/10up/safe-svg/pull/245)).
+- Bump `@babel/runtime` from 7.23.9 to 7.27.0, `axios` from 1.7.4 to 1.8.4, `cookie` from 0.4.2 to 0.7.1, `express` from 4.21.0 to 4.21.2 and `@wordpress/e2e-test-utils-playwright` from 0.26.0 to 1.20.0 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#250](https://github.com/10up/safe-svg/pull/250)).
+- Bump `http-proxy-middleware` from 2.0.6 to 2.0.9 (props [@dependabot](https://github.com/apps/dependabot), [@iamdharmesh](https://github.com/iamdharmesh) via [#253](https://github.com/10up/safe-svg/pull/253)).
+- Bump `tar-fs` from 3.0.8 to 3.0.9 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#258](https://github.com/10up/safe-svg/pull/258)).
+- Bump `bytes` from 3.0.0 to 3.1.2 and `compression` from 1.7.4 to 1.8.1 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#265](https://github.com/10up/safe-svg/pull/265)).
+
+### Developer
+- Update all third-party actions our workflows rely on to use versions based on specific commit hashes (props [@dkotter](https://github.com/dkotter), [@jeffpaul](https://github.com/jeffpaul) via [#248](https://github.com/10up/safe-svg/pull/248)).
+- Updated GitHub Action workflow permissions (props [@dkotter](https://github.com/dkotter), [@jeffpaul](https://github.com/jeffpaul) via [#262](https://github.com/10up/safe-svg/pull/262)).
+
+## [2.3.1] - 2024-12-05
+### Fixed
+- Revert changes made to how we determine custom dimensions for SVGs (props [@dkotter](https://github.com/dkotter), [@martinpl](https://github.com/martinpl), [@subfighter3](https://github.com/subfighter3), [@smerriman](https://github.com/smerriman), [@gigatyrant](https://github.com/gigatyrant), [@jeffpaul](https://github.com/jeffpaul), [@iamdharmesh](https://github.com/iamdharmesh) via [#238](https://github.com/10up/safe-svg/pull/238)).
+
+## [2.3.0] - 2024-11-25
+**Note that this release bumps the WordPress minimum version from 6.4 to 6.5.**
+
+### Added
+- New setting that allows large SVG files (roughly 10MB or greater) to be uploaded and sanitized properly (props [@kirtangajjar](https://github.com/kirtangajjar), [@faisal-alvi](https://github.com/faisal-alvi), [@darylldoyle](https://github.com/darylldoyle), [@manojsiddoji](https://github.com/manojsiddoji), [@dkotter](https://github.com/dkotter) via [#201](https://github.com/10up/safe-svg/pull/201)).
+- New `get_svg_dimensions` function in order to reduce code duplication (props [@gabriel-glo](https://github.com/gabriel-glo), [@jeremymoore](https://github.com/jeremymoore), [@darylldoyle](https://github.com/darylldoyle), [@iamdharmesh](https://github.com/iamdharmesh), [@dkotter](https://github.com/dkotter) via [#216](https://github.com/10up/safe-svg/pull/216)).
+
+### Changed
+- Updated the `enshrined/svg-sanitize` package from 0.16.0 to 0.19.0 to fix a PHP 8.3 compatibility issue (props [@sksaju](https://github.com/sksaju), [@TylerB24890](https://github.com/TylerB24890), [@darylldoyle](https://github.com/darylldoyle), [@rolf-yoast](https://github.com/rolf-yoast), [@faisal-alvi](https://github.com/faisal-alvi) via [#214](https://github.com/10up/safe-svg/pull/214)).
+- Update how image dimensions are passed in `get_image_tag_override` and `one_pixel_fix` methods (props [@gabriel-glo](https://github.com/gabriel-glo), [@jeremymoore](https://github.com/jeremymoore), [@darylldoyle](https://github.com/darylldoyle), [@iamdharmesh](https://github.com/iamdharmesh), [@dkotter](https://github.com/dkotter) via [#216](https://github.com/10up/safe-svg/pull/216)).
+- Bump WordPress "tested up to" version to 6.7 (props [@colinswinney](https://github.com/colinswinney), [@jeffpaul](https://github.com/jeffpaul) via [#232](https://github.com/10up/safe-svg/pull/232), [#233](https://github.com/10up/safe-svg/pull/233)).
+- Bump WordPress minimum from 6.4 to 6.5 (props [@colinswinney](https://github.com/colinswinney), [@jeffpaul](https://github.com/jeffpaul) via [#232](https://github.com/10up/safe-svg/pull/232), [#233](https://github.com/10up/safe-svg/pull/233)).
+- Remove composer dev dependencies from archived project (props [@TylerB24890](https://github.com/TylerB24890), [@szepeviktor](https://github.com/szepeviktor), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#220](https://github.com/10up/safe-svg/pull/220)).
+
+### Fixed
+- Use proper block category for the Safe SVG Icon block (props [@kirtangajjar](https://github.com/kirtangajjar), [@fabiankaegy](https://github.com/fabiankaegy) via [#226](https://github.com/10up/safe-svg/pull/226)).
+
+### Security
+- Only allow SVG file types to be uploaded if our sanitizer is able to run on those files (props [@darylldoyle](https://github.com/darylldoyle), [@xknown](https://github.com/xknown), [@dkotter](https://github.com/dkotter) via [#228](https://github.com/10up/safe-svg/pull/228)).
+- Bump `webpack` from 5.90.1 to 5.94.0 (props [@dependabot](https://github.com/apps/dependabot), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#222](https://github.com/10up/safe-svg/pull/222)).
+- Bump `ws` from 7.5.10 to 8.18.0, `serve-static` from 1.15.0 to 1.16.2 and `express` from 4.19.2 to 4.21.0 (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9), [@faisal-alvi](https://github.com/faisal-alvi) via [#227](https://github.com/10up/safe-svg/pull/227), [#230](https://github.com/10up/safe-svg/pull/230), [#234](https://github.com/10up/safe-svg/pull/234)).
+
+### Developer
+- Bump `@10up/cypress-wp-utils` from 0.2.0 to 0.4.0, `@wordpress/env` from 9.2.0 to 10.12.0, `cypress` from 13.3.0 to 13.16.0 and `cypress-mochawesome-reporter` from 3.4.0 to 3.8.2. Downgrades `@wordpress/scripts` to 27.9.0. Add additional E2E tests (props [@dkotter](https://github.com/dkotter), [@Lewiscowles1986](https://github.com/Lewiscowles1986) via [#234](https://github.com/10up/safe-svg/pull/234)).
+- Update repo badges, add banner image (props [@jeffpaul](https://github.com/jeffpaul), [@dkotter](https://github.com/dkotter) via [#224](https://github.com/10up/safe-svg/pull/224), [#229](https://github.com/10up/safe-svg/pull/229)).
+
+## [2.2.6] - 2024-08-28
+**Note that this release bumps the WordPress minimum version from 5.7 to 6.4.**
+
+### Changed
+- Bump WordPress "tested up to" version to 6.6 (props [@sudip-md](https://github.com/sudip-md), [@ankitguptaindia](https://github.com/ankitguptaindia), [@jeffpaul](https://github.com/jeffpaul) via [#212](https://github.com/10up/safe-svg/pull/212), [#213](https://github.com/10up/safe-svg/pull/213)).
+- Bump WordPress minimum from 5.7 to 6.4 (props [@sudip-md](https://github.com/sudip-md), [@ankitguptaindia](https://github.com/ankitguptaindia), [@jeffpaul](https://github.com/jeffpaul) via [#212](https://github.com/10up/safe-svg/pull/212), [#213](https://github.com/10up/safe-svg/pull/213)).
+
+### Security
+- Add svg sanitization on the `wp_handle_sideload_prefilter` filter (props [@dkotter](https://github.com/dkotter), [@xknown](https://github.com/xknown), [@iamdharmesh](https://github.com/iamdharmesh) via [GHSA-3vr7-86pg-hf4g](https://github.com/10up/safe-svg/security/advisories/GHSA-3vr7-86pg-hf4g)).
+- Bump `braces` from 3.0.2 to 3.0.3, `pac-resolver` from 7.0.0 to 7.0.1, `socks` from 2.7.1 to 2.8.3, `ws` from 7.5.9 to 7.5.10 and remove `ip` (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9) via [#206](https://github.com/10up/safe-svg/pull/206)).
+- Bump `axios` from 1.6.7 to 1.7.4 (props [@dependabot](https://github.com/apps/dependabot), [@faisal-alvi](https://github.com/faisal-alvi) via [#218](https://github.com/10up/safe-svg/pull/218)).
+
+### Developer
+- Update repo badges, add WordPress Playground badge (props [@jeffpaul](https://github.com/jeffpaul), [@dkotter](https://github.com/dkotter) via [#217](https://github.com/10up/safe-svg/pull/217)).
+
+## [2.2.6] (Fork) - 2024-07-29
 ### Added
 - Alignment settings to make Inline SVG block settings similar to the core image block (props [@jessica-townsend](https://github.com/jessica-townsend), [@douglas-johnson](https://github.com/douglas-johnson)).
 
@@ -358,6 +449,12 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Initial Release.
 
 [Unreleased]: https://github.com/10up/safe-svg/compare/trunk...develop
+[2.4.0]: https://github.com/10up/safe-svg/compare/2.3.3...2.4.0
+[2.3.3]: https://github.com/10up/safe-svg/compare/2.3.2...2.3.3
+[2.3.2]: https://github.com/10up/safe-svg/compare/2.3.1...2.3.2
+[2.3.1]: https://github.com/10up/safe-svg/compare/2.3.0...2.3.1
+[2.3.0]: https://github.com/10up/safe-svg/compare/2.2.6...2.3.0
+[2.2.6]: https://github.com/10up/safe-svg/compare/2.2.5...2.2.6
 [2.2.5]: https://github.com/10up/safe-svg/compare/2.2.4...2.2.5
 [2.2.4]: https://github.com/10up/safe-svg/compare/2.2.3...2.2.4
 [2.2.3]: https://github.com/10up/safe-svg/compare/2.2.2...2.2.3
