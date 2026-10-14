@@ -166,11 +166,19 @@ function render_block_callback( $attributes ) {
 		return '';
 	}
 
+	$width  = isset( $attributes['dimensionWidth'] ) ? $attributes['dimensionWidth'] . 'px' : 'auto';
+	$height = isset( $attributes['dimensionHeight'] ) ? $attributes['dimensionHeight'] . 'px' : 'auto';
+
+	// Styles inside a shadow root can't see the wrapper's align class.
+	if ( in_array( $attributes['align'] ?? '', array( 'full', 'wide' ), true ) ) {
+		$width = '100%';
+	}
+
 	$contents = new WP_HTML_Tag_Processor( $contents );
 
 	if ( $contents->next_tag( 'svg' ) ) {
-		$contents->set_attribute( 'width', isset( $attributes['dimensionWidth'] ) ? esc_attr( $attributes['dimensionWidth'] . 'px' ) : 'auto' );
-		$contents->set_attribute( 'height', isset( $attributes['dimensionHeight'] ) ? esc_attr( $attributes['dimensionHeight'] . 'px' ) : 'auto' );
+		$contents->set_attribute( 'width', esc_attr( $width ) );
+		$contents->set_attribute( 'height', esc_attr( $height ) );
 	}
 
 	$contents = $contents->get_updated_html();
