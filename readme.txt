@@ -4,7 +4,7 @@ Tags:              svg, security, media, vector, mime
 Requires at least: 6.9
 Requires PHP:      7.4
 Tested up to:      7.1
-Stable tag:        2.5.1
+Stable tag:        2.5.2
 License:           GPL-2.0-or-later
 License URI:       https://spdx.org/licenses/GPL-2.0-or-later.html
 
@@ -92,6 +92,9 @@ This is a deliberate design decision: Safe SVG prioritizes guaranteed sanitizati
 Please report security bugs found in the source code of the Safe SVG plugin through the [Patchstack Vulnerability Disclosure  Program](https://patchstack.com/database/vdp/9e5fb4ed-587a-4ada-8dc3-a5b7362c0501).  The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
 
 == Changelog ==
+
+= 2.5.2 - 2026-10-14 =
+* **Changed:** Merge upstream 2.5.1 security release with fork (props [@jessica-townsend](https://github.com/jessica-townsend)).
 
 = 2.5.1 - 2026-09-22 =
 * **Added:** New REST endpoint, `/safe-svg/v1/svg/ATTACHMENT-ID`, that can be passed an attachment ID for an SVG and will return sanitized markup (props [@dkotter](https://github.com/dkotter), [@peterwilsoncc](https://github.com/peterwilsoncc) via [GHSA-3hhm-5qc9-q4xf](https://github.com/10up/safe-svg/security/advisories/GHSA-3hhm-5qc9-q4xf)).

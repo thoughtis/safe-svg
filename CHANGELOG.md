@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
+## [2.5.2] - 2026-10-14
+### Changed
+- Merge upstream 2.5.1 security release with fork (props [@jessica-townsend](https://github.com/jessica-townsend)).
+
 ## [2.5.1] - 2026-09-22
 **This is a security release, it is recommended to upgrade immediately.**
 
