@@ -62,8 +62,12 @@ const InlineSvg = ({ markup, width, height }) => {
 
 		const svg = (shadow || host).querySelector('svg');
 
-		if (svg && width && height) {
-			svg.setAttribute('style', `width: ${width}px; height: ${height}px;`);
+		if (svg && typeof width === 'number') {
+			svg.setAttribute('width', `${width}`);
+		}
+
+		if (svg && typeof height === 'number') {
+			svg.setAttribute('height', `${height}`);
 		}
 	}, [markup, width, height]);
 
