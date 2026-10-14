@@ -12,12 +12,8 @@ import { __ } from '@wordpress/i18n';
 import {
 	Placeholder,
 	PanelBody,
-	Dropdown,
 	Notice,
-	ToolbarButton,
-	TextControl,
 } from '@wordpress/components';
-import { link } from '@wordpress/icons';
 import {
 	useBlockProps,
 	BlockControls,
@@ -26,7 +22,6 @@ import {
 	__experimentalImageSizeControl as ImageSizeControl,
 	MediaReplaceFlow,
 	MediaPlaceholder,
-	LinkControl,
 	getColorClassName,
 } from '@wordpress/block-editor';
 
@@ -86,11 +81,6 @@ const SafeSvgBlockEdit = ({ attributes, setAttributes }) => {
 		imageHeight,
 		dimensionWidth,
 		dimensionHeight,
-		href,
-		linkTarget,
-		nofollow,
-		sponsored,
-		linkLabel,
 	} = attributes;
 
 	// Get the markup and URL from the attachment ID.
@@ -227,75 +217,6 @@ const SafeSvgBlockEdit = ({ attributes, setAttributes }) => {
 							accept={ALLOWED_MEDIA_TYPES}
 							onSelect={onSelectImage}
 							onError={onError} />
-						<Dropdown
-							className="safe-svg-link-dropdown"
-							renderToggle={({ isOpen, onToggle }) => (
-								<ToolbarButton
-									icon={link}
-									label={__('Link', 'safe-svg')}
-									onClick={onToggle}
-									aria-expanded={isOpen}
-								/>
-							)}
-							renderContent={({ onClose }) => (
-								<div className="block-editor-link-control">
-									<LinkControl
-										value={{
-											url: href,
-											opensInNewTab: linkTarget === '_blank',
-											nofollow: !!nofollow,
-											sponsored: !!sponsored,
-										}}
-										onChange={(linkSettings) => {
-											setAttributes({
-												href: linkSettings.url,
-												linkTarget: linkSettings.opensInNewTab ? '_blank' : '',
-												nofollow: !!linkSettings.nofollow,
-												sponsored: !!linkSettings.sponsored,
-											});
-										}}
-										onRemove={() => {
-											setAttributes({
-												href: '',
-												linkTarget: '',
-												nofollow: false,
-												sponsored: false,
-											});
-										}}
-										settings={[
-											{
-												id: 'opensInNewTab',
-												title: __(
-													'Open in new tab',
-													'safe-svg'
-												),
-											},
-											{
-												id: 'nofollow',
-												title: __(
-													'Add rel="nofollow"',
-													'safe-svg'
-												),
-											},
-											{
-												id: 'sponsored',
-												title: __(
-													'Add rel="sponsored"',
-													'safe-svg'
-												),
-											},
-										]}
-										onClose={onClose}
-									/>
-									<TextControl
-										label={__('Link Label (aria-label)', 'safe-svg')}
-										value={linkLabel}
-										onChange={(value) => setAttributes({ linkLabel: value })}
-										help={__('Provides an accessible label for screen readers.', 'safe-svg')}
-									/>
-								</div>
-							)}
-						/>
 					</BlockControls>
 				</>
 			}
