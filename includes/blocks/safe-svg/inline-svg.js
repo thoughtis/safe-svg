@@ -14,7 +14,7 @@ import { useEffect, useRef } from '@wordpress/element';
  * Keep in sync with the safe_svg_inline_shadow_styles default in register.php.
  */
 const SHADOW_STYLES =
-	'svg{fill:currentColor;width:100%;height:100%;max-width:100%;max-height:100%}';
+	'svg{vertical-align:middle;height:auto;max-block-size:100%;max-inline-size:100%}';
 
 /**
  * Check whether an SVG carries its own stylesheet.

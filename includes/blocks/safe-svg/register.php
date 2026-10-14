@@ -343,7 +343,7 @@ function wrap_in_shadow_root( $svg, $attachment_id ): string {
 	 */
 	$styles = (string) apply_filters(
 		'safe_svg_inline_shadow_styles',
-		'svg{fill:currentColor;width:100%;height:100%;max-width:100%;max-height:100%}',
+		'svg{vertical-align:middle;height:auto;max-block-size:100%;max-inline-size:100%}',
 		$attachment_id
 	);
 
